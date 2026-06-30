@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Syne:wght@400..800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Default Tumblr-style theme variables (Gothic Velvet) */
+  --theme-bg: #0B0C10;
+  --theme-card: #050507;
+  --theme-panel: #141118;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #D6CFC7;
+  --theme-accent-1: #2C003E;
+  --theme-accent-2: #660B14;
+  --theme-accent-3: #A0A0A0;
+  --theme-bone: #D6CFC7;
+  
+  --theme-card-bg: rgba(11, 12, 16, 0.8);
+  --theme-panel-bg: rgba(44, 0, 62, 0.15);
+  --theme-border: #2C003E;
+  --theme-border-subtle: rgba(44, 0, 62, 0.5);
+  --theme-scroll-thumb: #2C003E;
+}
+
+/* 1. Gothic Velvet (Default Dark) */
+html.theme-gothic-velvet {
+  --theme-bg: #0B0C10;
+  --theme-card: #050507;
+  --theme-panel: #141118;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #D6CFC7;
+  --theme-accent-1: #2C003E;
+  --theme-accent-2: #660B14;
+  --theme-accent-3: #A0A0A0;
+  --theme-bone: #D6CFC7;
+  --theme-card-bg: rgba(11, 12, 16, 0.8);
+  --theme-panel-bg: rgba(44, 0, 62, 0.15);
+  --theme-border: #2C003E;
+  --theme-border-subtle: rgba(44, 0, 62, 0.5);
+  --theme-scroll-thumb: #2C003E;
+}
+
+/* 2. True Blue (Tumblr Classic Dark Blue) */
+html.theme-true-blue {
+  --theme-bg: #001b35;
+  --theme-card: #001122;
+  --theme-panel: #002544;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #8ca1b9;
+  --theme-accent-1: #003B6F;
+  --theme-accent-2: #529ecc;
+  --theme-accent-3: #7c91a3;
+  --theme-bone: #f0f4f8;
+  --theme-card-bg: rgba(0, 17, 34, 0.8);
+  --theme-panel-bg: rgba(0, 59, 111, 0.15);
+  --theme-border: #003B6F;
+  --theme-border-subtle: rgba(0, 59, 111, 0.5);
+  --theme-scroll-thumb: #003B6F;
+}
+
+/* 3. Cybernetic (Neon Hackers Black & Green) */
+html.theme-cybernetic {
+  --theme-bg: #000000;
+  --theme-card: #080808;
+  --theme-panel: #121212;
+  --theme-text-primary: #00ff00;
+  --theme-text-secondary: #00dd00;
+  --theme-accent-1: #00aa00;
+  --theme-accent-2: #00ff00;
+  --theme-accent-3: #88ff88;
+  --theme-bone: #ffffff;
+  --theme-card-bg: rgba(8, 8, 8, 0.9);
+  --theme-panel-bg: rgba(0, 255, 0, 0.05);
+  --theme-border: #00ff00;
+  --theme-border-subtle: rgba(0, 255, 0, 0.3);
+  --theme-scroll-thumb: #00ff00;
+}
+
+/* 4. Pumpkin Spice (Cozy Autumn Orange & Coffee) */
+html.theme-pumpkin-spice {
+  --theme-bg: #1d0f04;
+  --theme-card: #2c1606;
+  --theme-panel: #3a1f0d;
+  --theme-text-primary: #ffb84d;
+  --theme-text-secondary: #df9857;
+  --theme-accent-1: #e0601a;
+  --theme-accent-2: #803d14;
+  --theme-accent-3: #d1ab8a;
+  --theme-bone: #f5ebe6;
+  --theme-card-bg: rgba(44, 22, 6, 0.85);
+  --theme-panel-bg: rgba(224, 96, 26, 0.1);
+  --theme-border: #e0601a;
+  --theme-border-subtle: rgba(224, 96, 26, 0.4);
+  --theme-scroll-thumb: #e0601a;
+}
+
+/* 5. Canary (Yellow Jacket & Charcoal) */
+html.theme-canary {
+  --theme-bg: #0d0d0c;
+  --theme-card: #181816;
+  --theme-panel: #242421;
+  --theme-text-primary: #ffe600;
+  --theme-text-secondary: #c2b113;
+  --theme-accent-1: #ffd300;
+  --theme-accent-2: #b89c00;
+  --theme-accent-3: #e0ddcd;
+  --theme-bone: #f7f7f0;
+  --theme-card-bg: rgba(24, 24, 22, 0.9);
+  --theme-panel-bg: rgba(255, 211, 0, 0.06);
+  --theme-border: #ffd300;
+  --theme-border-subtle: rgba(255, 211, 0, 0.3);
+  --theme-scroll-thumb: #ffd300;
+}
+
+/* 6. Cherry Soda (Hot Pink & Cherry Cola) */
+html.theme-cherry-soda {
+  --theme-bg: #1a000d;
+  --theme-card: #2b0417;
+  --theme-panel: #3d0723;
+  --theme-text-primary: #ff4d94;
+  --theme-text-secondary: #e6005c;
+  --theme-accent-1: #ff007f;
+  --theme-accent-2: #99004d;
+  --theme-accent-3: #ff99cc;
+  --theme-bone: #fff0f5;
+  --theme-card-bg: rgba(43, 4, 23, 0.85);
+  --theme-panel-bg: rgba(255, 0, 127, 0.1);
+  --theme-border: #ff007f;
+  --theme-border-subtle: rgba(255, 0, 127, 0.4);
+  --theme-scroll-thumb: #ff007f;
+}
+
+/* 7. Vintage Paper (Warm Sepia Light Mode) */
+html.theme-vintage-paper {
+  --theme-bg: #f5ebe0;
+  --theme-card: #ebdcd0;
+  --theme-panel: #e3cca9;
+  --theme-text-primary: #4a3e3d;
+  --theme-text-secondary: #6e5c5b;
+  --theme-accent-1: #8c5c50;
+  --theme-accent-2: #b37465;
+  --theme-accent-3: #9e8e89;
+  --theme-bone: #4a3e3d;
+  --theme-card-bg: rgba(235, 220, 208, 0.85);
+  --theme-panel-bg: rgba(140, 92, 80, 0.08);
+  --theme-border: #8c5c50;
+  --theme-border-subtle: rgba(140, 92, 80, 0.3);
+  --theme-scroll-thumb: #8c5c50;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-mystery-bg: var(--theme-bg);
+  --color-mystery-plum: var(--theme-accent-1);
+  --color-mystery-steel: var(--theme-accent-3);
+  --color-mystery-oxblood: var(--theme-accent-2);
+  --color-mystery-bone: var(--theme-bone);
+}
+
+/* Custom font utilities for dynamic switcher */
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-dmsans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+@keyframes pulse {
+  0%, 100% { filter: drop-shadow(0 0 6px #660B14); }
+  50% { filter: drop-shadow(0 0 14px #2C003E); }
+}
+
+.star-pulse-anim {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Elegant Light Mode System Overrides: Gothic Book Paper Aesthetic */
+html.light {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+html.light #app-root-shell {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+html.light .bg-black {
+  background-color: var(--theme-bg) !important;
+}
+
+html.light .bg-black/60 {
+  background-color: var(--theme-card-bg) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+html.light .bg-\[\#0a0a0a\] {
+  background-color: var(--theme-card) !important;
+  border-color: var(--theme-border) !important;
+  box-shadow: 0 4px 12px rgba(44, 0, 62, 0.05) !important;
+}
+
+html.light .border-\[\#1a1a1a\] {
+  border-color: var(--theme-border-subtle) !important;
+}
+
+html.light .bg-\[\#1a1a1a\] {
+  background-color: var(--theme-panel) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+html.light .bg-black/40 {
+  background-color: rgba(11, 12, 16, 0.04) !important;
+}
+
+html.light .bg-black/50 {
+  background-color: rgba(11, 12, 16, 0.06) !important;
+}
+
+html.light .bg-black/20 {
+  background-color: rgba(11, 12, 16, 0.02) !important;
+}
+
+html.light .bg-black/70 {
+  background-color: rgba(11, 12, 16, 0.08) !important;
+}
+
+html.light .bg-black/30 {
+  background-color: rgba(11, 12, 16, 0.03) !important;
+}
+
+/* Light text color scaling for vintage print layout */
+html.light .text-slate-100 {
+  color: var(--theme-text-primary) !important;
+}
+
+html.light .text-slate-200 {
+  color: var(--theme-text-secondary) !important;
+}
+
+html.light .text-slate-300 {
+  color: var(--theme-accent-1) !important; /* Elegant theme-accent-1 for text */
+}
+
+html.light .text-slate-400 {
+  color: var(--theme-text-secondary) !important;
+}
+
+html.light .text-slate-500 {
+  color: var(--theme-accent-2) !important; /* theme-accent-2 for subtitles / status warnings */
+}
+
+html.light .text-slate-700 {
+  color: var(--theme-accent-3) !important;
+}
+
+/* Inputs, Selects & Textareas in light paper theme */
+html.light input, 
+html.light select, 
+html.light textarea {
+  background-color: var(--theme-card) !important;
+  color: var(--theme-text-primary) !important;
+  border-color: var(--theme-border) !important;
+}
+
+html.light select option {
+  background-color: var(--theme-card) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+/* Hover and active states */
+html.light .hover:bg-\[\#1a1a1a\]:hover {
+  background-color: var(--theme-panel) !important;
+}
+
+html.light .hover:bg-black:hover {
+  background-color: rgba(11, 12, 16, 0.05) !important;
+}
+
+html.light .hover:border-\[\#2a2a2a\]:hover {
+  border-color: var(--theme-accent-1) !important;
+}
+
+/* Custom visual status cards */
+html.light .bg-indigo-950/10 {
+  background-color: var(--theme-panel-bg) !important;
+}
+
+html.light .bg-rose-950/10 {
+  background-color: rgba(102, 11, 20, 0.06) !important;
+}
+
+html.light .border-rose-500/30 {
+  border-color: rgba(102, 11, 20, 0.2) !important;
+}
+
+html.light .bg-emerald-950/10 {
+  background-color: rgba(20, 80, 50, 0.06) !important;
+}
+
+html.light .bg-emerald-950/40 {
+  background-color: rgba(20, 80, 50, 0.1) !important;
+}
+
+html.light .border-emerald-500/30 {
+  border-color: rgba(20, 80, 50, 0.2) !important;
+}
+
+html.light .border-emerald-500/60 {
+  border-color: rgba(20, 80, 50, 0.4) !important;
+}
+
+html.light .bg-amber-950/10 {
+  background-color: rgba(180, 110, 20, 0.06) !important;
+}
+
+html.light .border-amber-500/30 {
+  border-color: rgba(180, 110, 20, 0.2) !important;
+}
+
+html.light .border-indigo-800/60 {
+  border-color: var(--theme-border-subtle) !important;
+}
+
+html.light .bg-indigo-950/40 {
+  background-color: var(--theme-panel-bg) !important;
+}
+
+html.light .from-indigo-950/20 {
+  --tw-gradient-from: var(--theme-panel-bg) !important;
+}
+
+html.light .to-violet-950/20 {
+  --tw-gradient-to: var(--theme-bg) !important;
+}
+
+html.light .from-rose-950/10 {
+  --tw-gradient-from: rgba(102, 11, 20, 0.05) !important;
+}
+
+html.light .to-black {
+  --tw-gradient-to: var(--theme-bg) !important;
+}
+
+/* Gradient text conversion for better contrast in light mode */
+html.light .bg-gradient-to-r.from-white.via-indigo-100.to-purple-200 {
+  background-image: linear-gradient(to right, var(--theme-accent-1), var(--theme-accent-2)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* ==========================================
+   METALLIC CHROME SILVER & PURE VOID BLACK OVERRIDES
+   ========================================== */
+html.dark, html:not(.light) {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text-secondary) !important;
+}
+
+html.dark #app-root-shell, html:not(.light) #app-root-shell {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text-secondary) !important;
+}
+
+/* Deep Black / Carbon Obsidian containers */
+html.dark .bg-black, html:not(.light) .bg-black {
+  background-color: var(--theme-bg) !important;
+}
+
+html.dark .bg-\[\#0a0a0a\], html:not(.light) .bg-\[\#0a0a0a\] {
+  background-color: var(--theme-card-bg) !important;
+  border-color: var(--theme-border) !important;
+  box-shadow: 0 15px 50px -15px rgba(0, 0, 0, 0.95) !important;
+}
+
+html.dark .bg-\[\#1a1a1a\], html:not(.light) .bg-\[\#1a1a1a\] {
+  background-color: var(--theme-panel-bg) !important;
+  border-color: var(--theme-border) !important;
+}
+
+html.dark .border-\[\#1a1a1a\], html:not(.light) .border-\[\#1a1a1a\] {
+  border-color: var(--theme-border-subtle) !important;
+}
+
+html.dark .border-\[\#2a2a2a\], html:not(.light) .border-\[\#2a2a2a\] {
+  border-color: var(--theme-border) !important;
+}
+
+/* Standard metallic silver & titanium text scaling */
+html.dark .text-slate-100, html:not(.light) .text-slate-100 { color: var(--theme-text-primary) !important; }
+html.dark .text-slate-200, html:not(.light) .text-slate-200 { color: var(--theme-text-secondary) !important; }
+html.dark .text-slate-300, html:not(.light) .text-slate-300 { color: var(--theme-accent-3) !important; }
+html.dark .text-slate-400, html:not(.light) .text-slate-400 { color: var(--theme-text-secondary) !important; opacity: 0.8; }
+html.dark .text-slate-500, html:not(.light) .text-slate-500 { color: var(--theme-text-secondary) !important; opacity: 0.6; }
+html.dark .text-slate-700, html:not(.light) .text-slate-700 { color: var(--theme-text-secondary) !important; opacity: 0.4; }
+
+/* Replace indigo/purple colors with brilliant mercury silver & platinum highlights */
+html.dark .text-indigo-400, html:not(.light) .text-indigo-400 { color: var(--theme-text-secondary) !important; }
+html.dark .text-indigo-300, html:not(.light) .text-indigo-300 { color: var(--theme-accent-3) !important; }
+html.dark .text-indigo-200, html:not(.light) .text-indigo-200 { color: var(--theme-text-primary) !important; }
+
+html.dark .bg-indigo-600, html:not(.light) .bg-indigo-600 {
+  background-color: var(--theme-accent-1) !important;
+  color: var(--theme-text-primary) !important;
+  font-weight: 800 !important;
+}
+html.dark .hover:bg-indigo-500:hover, html:not(.light) .hover:bg-indigo-500:hover {
+  background-color: var(--theme-panel) !important;
+}
+
+html.dark .border-indigo-800, html:not(.light) .border-indigo-800,
+html.dark .border-indigo-800\/60, html:not(.light) .border-indigo-800\/60 {
+  border-color: var(--theme-border) !important;
+}
+
+html.dark .bg-indigo-950/10, html:not(.light) .bg-indigo-950/10 { background-color: var(--theme-panel-bg) !important; }
+html.dark .bg-indigo-950/20, html:not(.light) .bg-indigo-950/20 { background-color: var(--theme-panel-bg) !important; opacity: 0.9; }
+html.dark .bg-indigo-950/40, html:not(.light) .bg-indigo-950/40 { background-color: var(--theme-panel-bg) !important; opacity: 0.8; }
+
+html.dark .from-indigo-950/20, html:not(.light) .from-indigo-950/20 {
+  --tw-gradient-from: var(--theme-panel-bg) !important;
+}
+html.dark .to-violet-950/20, html:not(.light) .to-violet-950/20 {
+  --tw-gradient-to: var(--theme-bg) !important;
+}
+
+/* Gradient text heading for metallic chrome shine */
+html.dark .bg-gradient-to-r.from-white.via-indigo-100.to-purple-200,
+html:not(.light) .bg-gradient-to-r.from-white.via-indigo-100.to-purple-200 {
+  background-image: linear-gradient(to right, var(--theme-text-primary), var(--theme-text-secondary), var(--theme-accent-3)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Inputs, Selects & Textareas */
+html.dark input, html.dark select, html.dark textarea,
+html:not(.light) input, html:not(.light) select, html:not(.light) textarea {
+  background-color: var(--theme-card) !important;
+  color: var(--theme-text-secondary) !important;
+  border-color: var(--theme-border) !important;
+}
+
+html.dark select option, html:not(.light) select option {
+  background-color: var(--theme-card) !important;
+  color: var(--theme-text-secondary) !important;
+}
+
+/* Dynamic Card Styles */
+html.style-vintage #pomodoro-timer-card,
+html.style-vintage #habits-tracker-card,
+html.style-vintage #weekly-calendar-card,
+html.style-vintage #tasks-dashboard-card,
+html.style-vintage #ai-coach-card,
+html.style-vintage #task-planning-recipe-card {
+  border: 1px solid var(--theme-border) !important;
+  position: relative;
+  border-radius: 1rem !important;
+}
+
+html.style-vintage #pomodoro-timer-card::before,
+html.style-vintage #habits-tracker-card::before,
+html.style-vintage #weekly-calendar-card::before,
+html.style-vintage #tasks-dashboard-card::before,
+html.style-vintage #ai-coach-card::before,
+html.style-vintage #task-planning-recipe-card::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid var(--theme-bg);
+  border-radius: 0.85rem;
+  pointer-events: none;
+}
+
+html.style-glass #pomodoro-timer-card,
+html.style-glass #habits-tracker-card,
+html.style-glass #weekly-calendar-card,
+html.style-glass #tasks-dashboard-card,
+html.style-glass #ai-coach-card,
+html.style-glass #task-planning-recipe-card {
+  backdrop-filter: blur(16px) !important;
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid var(--theme-border-subtle) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.style-minimal #pomodoro-timer-card,
+html.style-minimal #habits-tracker-card,
+html.style-minimal #weekly-calendar-card,
+html.style-minimal #tasks-dashboard-card,
+html.style-minimal #ai-coach-card,
+html.style-minimal #task-planning-recipe-card {
+  border: 1px solid var(--theme-border-subtle) !important;
+  box-shadow: none !important;
+  background-color: var(--theme-card) !important;
+}
+
+/* Custom scrollbars to match the dark aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-secondary);
+}
+
+/* Burgundy Elegant Color Utility System */
+.bg-burgundy-soft {
+  background-color: rgba(102, 11, 20, 0.15) !important;
+}
+html.light .bg-burgundy-soft {
+  background-color: rgba(102, 11, 20, 0.08) !important;
+}
+
+.border-burgundy-subtle {
+  border-color: rgba(102, 11, 20, 0.4) !important;
+}
+html.light .border-burgundy-subtle {
+  border-color: rgba(102, 11, 20, 0.15) !important;
+}
+
+.text-burgundy-elegant {
+  color: #ffcad1 !important;
+}
+html.light .text-burgundy-elegant {
+  color: #660B14 !important;
+}
+
+.bg-burgundy-solid {
+  background-color: #660B14 !important;
+  color: #ffffff !important;
+}
+.hover\:bg-burgundy-solid-hover:hover {
+  background-color: #4b060d !important;
+}
+
+/* OVERALL POLISH CONTROLS */
+
+/* 1. Consistent 8px (0.5rem) border radius on all cards, modal bodies, and panels */
+#pomodoro-timer-card,
+#habits-tracker-card,
+#weekly-calendar-card,
+#tasks-dashboard-card,
+#ai-coach-card,
+#task-planning-recipe-card,
+#task-form-card,
+.card,
+.rounded-2xl,
+.rounded-xl {
+  border-radius: 8px !important;
+}
+
+/* Adjust vintage inner outline border-radius to fit perfectly inside the 8px card */
+html.style-vintage #pomodoro-timer-card::before,
+html.style-vintage #habits-tracker-card::before,
+html.style-vintage #weekly-calendar-card::before,
+html.style-vintage #tasks-dashboard-card::before,
+html.style-vintage #ai-coach-card::before,
+html.style-vintage #task-planning-recipe-card::before {
+  border-radius: 5px !important;
+}
+
+/* 2. Tactile micro-interactions: slight scale transform on click for all buttons and interactive controls */
+button,
+a[role="button"],
+.tab-btn,
+input[type="submit"],
+.interactive-click {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, border-color 0.2s, opacity 0.2s !important;
+}
+
+button:active,
+a[role="button"]:active,
+.tab-btn:active,
+input[type="submit"]:active,
+.interactive-click:active {
+  transform: scale(0.95) !important;
+}
+
+/* 3. High-performance subtle staggered fade-in transition when tasks appear */
+@keyframes taskFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-fade-in {
+  animation: taskFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered load delays for smooth organic appearance rhythm */
+.task-fade-in:nth-child(1) { animation-delay: 0.02s; }
+.task-fade-in:nth-child(2) { animation-delay: 0.04s; }
+.task-fade-in:nth-child(3) { animation-delay: 0.06s; }
+.task-fade-in:nth-child(4) { animation-delay: 0.08s; }
+.task-fade-in:nth-child(5) { animation-delay: 0.1s; }
+.task-fade-in:nth-child(6) { animation-delay: 0.12s; }
+.task-fade-in:nth-child(7) { animation-delay: 0.14s; }
+.task-fade-in:nth-child(8) { animation-delay: 0.16s; }
+.task-fade-in:nth-child(n+9) { animation-delay: 0.18s; }
+
+
+
+
+
